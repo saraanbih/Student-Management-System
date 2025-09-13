@@ -7,7 +7,7 @@
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
   </head>
   <body class="d-flex flex-column min-vh-100">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="{% url 'index' %}">
           <i class="fa-solid fa-graduation-cap fa-lg"></i> Student Management System
@@ -17,7 +17,6 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav me-auto">
-            {% if user.is_authenticated %}
             <li class="nav-item">
               <a class="nav-link" href="{% url 'index' %}">
                 <i class="fa-solid fa-list fa-lg"></i> All Students
@@ -28,46 +27,28 @@
                 <i class="fa-solid fa-plus fa-lg"></i> Add Student
               </a>
             </li>
-            {% endif %}
           </ul>
-          <ul class="navbar-nav ms-auto">
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <span class="navbar-text me-3">Hello, {{ user.username }}</span>
-            </li>
-            <li class="nav-item">
-              <form method="post" action="{% url 'logout' %}" class="d-inline">
-                {% csrf_token %}
-                <button type="submit" class="btn btn-link nav-link" style="display:inline; padding:0; border:none; background:none;">
-                  Logout
-                </button>
-              </form>
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'login' %}">Login</a>
-            </li>
-            {% endif %}
-
-          </ul>
-
+          {% if user.is_authenticated %}
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
+          {% endif %}
         </div>
       </div>
     </nav>
-
-    <div class="container-fluid mt-4">
+    <div class="container-fluid">
       {% block body %}
       {% endblock %}
     </div>
-
     <footer class="mt-auto mb-4">
       <div class="text-center">
         <span>
-          Copyright &copy; <script>document.write(new Date().getFullYear())</script> Sara's Projects.
+          Copyright &copy; <script>document.write(new Date().getFullYear())</script> Bob's Programming Academy.
         </span>
       </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

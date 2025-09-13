@@ -9,5 +9,6 @@ urlpatterns = [
     path('add/', views.add, name='add'),
     path('edit/<int:student_id>/', views.edit, name='edit'),
     path('delete/<int:student_id>/', views.delete, name='delete'),
+
     path('logout/', auth_views.LogoutView.as_view(next_page='login'), name='logout'),
 ]
