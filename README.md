@@ -13,7 +13,6 @@ A **Django-based web application** to manage student records, including viewing,
 * [Project Structure](#project-structure)
 * [Technologies](#technologies)
 * [Contributing](#contributing)
-* [License](#license)
 
 ---
 
@@ -30,7 +29,7 @@ A **Django-based web application** to manage student records, including viewing,
 ---
 
 ## Demo
-![Uploading Student Management System.gif…]()
+![Student Management System](https://github.com/user-attachments/assets/35444682-274c-45dd-8978-84dd4c3d5897)
 
 ---
 
