@@ -29,7 +29,7 @@ A **Django-based web application** to manage student records, including viewing,
 ---
 
 ## Demo
-![Student Management System](https://github.com/user-attachments/assets/35444682-274c-45dd-8978-84dd4c3d5897)
+![Demo](./assets/demo.gif)
 
 ---
 
